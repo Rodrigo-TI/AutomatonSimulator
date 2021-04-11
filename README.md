@@ -6,7 +6,7 @@ Nele é possível cadastrar um autômato, editar e visualizar seus elementos e v
 
 ## **Instruções de utilização :**
 
-## 1. Criação do autômato
+#### 1. Criação do autômato
 ```
 1 - Criar autômato
 0 - Finalizar programa
@@ -22,7 +22,7 @@ Opção escolhida :
 ```
 Nessa parte basta criar o autômato conforme os menus acima.
 
-## 2. Manipulando o autômato
+#### 2. Manipulando o autômato
 ```
   1 - Verificar palavra
   2 - Inserir símbolo no alfabeto do autômato
