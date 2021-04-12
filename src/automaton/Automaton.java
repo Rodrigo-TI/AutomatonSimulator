@@ -147,6 +147,9 @@ public class Automaton {
         this.transitions.remove(transitionRemoved);
         return transitionRemoved;
     }
+    public boolean symbolExist(String symbol) {
+        return this.alphabet.contains(symbol);
+    }
     public boolean stateExist(String nameState) {
         State state = new State(nameState);
         boolean teste = this.states.contains(state);
@@ -209,7 +212,7 @@ public class Automaton {
         }
         for (int i = 1; i < this.states.size(); i++) {
             if (this.states.get(i).isStateInitial()) {
-                sb.append(this.states.get(i).getName());
+                sb.append(", ").append(this.states.get(i).getName());
             }
         }
         if (sb.toString().equals("")) {
@@ -227,7 +230,7 @@ public class Automaton {
         }
         for (int i = 1; i < this.states.size(); i++) {
             if (this.states.get(i).isStateFinal()) {
-                sb.append(this.states.get(i).getName());
+                sb.append(", ").append(this.states.get(i).getName());
             }
         }
         if (sb.toString().equals("")) {

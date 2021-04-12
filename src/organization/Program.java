@@ -189,15 +189,20 @@ public class Program {
                             else {
                                 System.out.print("Valor da transição : ");
                                 String valueTransition = s.nextLine();
-                                if (this.a.addTransition(new Transition(stateAAddTransition,stateBAddTransition,valueTransition)) == true) {
-                                    System.out.println("\nA transição de '"+nameStateAAddTransition+"' para '"+nameStateBAddTransition+"' ao ler '"+valueTransition+"' foi adicionada com sucesso !");
+                                if (!this.a.symbolExist(valueTransition)) {
+                                    System.out.println("\nERRO ! O alfabeto do autômato não contém esse símbolo !");
                                 }
                                 else {
-                                    if (this.a.getTypeAutomaton().equals("dfa")) {
-                                        System.out.println("\nERRO ! Já existe uma transição saindo de '"+nameStateAAddTransition+"' ao ler '"+valueTransition+"' !");
+                                    if (this.a.addTransition(new Transition(stateAAddTransition,stateBAddTransition,valueTransition)) == true) {
+                                        System.out.println("\nA transição de '"+nameStateAAddTransition+"' para '"+nameStateBAddTransition+"' ao ler '"+valueTransition+"' foi adicionada com sucesso !");
                                     }
-                                    else if (this.a.getTypeAutomaton().equals("ndfa")) {
-                                        System.out.println("\nERRO ! Já existe uma transição de '"+nameStateAAddTransition+"' para '"+nameStateBAddTransition+"' ao ler '"+valueTransition+"' !");
+                                    else {
+                                        if (this.a.getTypeAutomaton().equals("dfa")) {
+                                            System.out.println("\nERRO ! Já existe uma transição saindo de '"+nameStateAAddTransition+"' ao ler '"+valueTransition+"' !");
+                                        }
+                                        else if (this.a.getTypeAutomaton().equals("ndfa")) {
+                                            System.out.println("\nERRO ! Já existe uma transição de '"+nameStateAAddTransition+"' para '"+nameStateBAddTransition+"' ao ler '"+valueTransition+"' !");
+                                        }
                                     }
                                 }
                             }
@@ -233,11 +238,16 @@ public class Program {
                             else {
                                 System.out.print("Valor da transição : ");
                                 String valueTransition = s.nextLine();
-                                if (this.a.removeTransition(new Transition(new State(nameStateARemoveTransition), new State(nameStateBRemoveTransition), valueTransition)) != null) {
-                                    System.out.println("\nA transição de '"+nameStateARemoveTransition+"' para '"+nameStateBRemoveTransition+"' ao ler '"+valueTransition+"' foi removida com sucesso !");
+                                if (!this.a.symbolExist(valueTransition)) {
+                                    System.out.println("\nERRO ! O alfabeto do autômato não contém esse símbolo !");
                                 }
                                 else {
-                                    System.out.println("\nERRO ! Não existe uma transição de '"+nameStateARemoveTransition+"' para '"+nameStateBRemoveTransition+"' ao ler '"+valueTransition+"' !");
+                                    if (this.a.removeTransition(new Transition(new State(nameStateARemoveTransition), new State(nameStateBRemoveTransition), valueTransition)) != null) {
+                                        System.out.println("\nA transição de '"+nameStateARemoveTransition+"' para '"+nameStateBRemoveTransition+"' ao ler '"+valueTransition+"' foi removida com sucesso !");
+                                    }
+                                    else {
+                                        System.out.println("\nERRO ! Não existe uma transição de '"+nameStateARemoveTransition+"' para '"+nameStateBRemoveTransition+"' ao ler '"+valueTransition+"' !");
+                                    }
                                 }
                             }
                         }
@@ -267,11 +277,16 @@ public class Program {
                             else {
                                 System.out.print("Valor da transição : ");
                                 String valueTransition = s.nextLine();
-                                if (this.a.transitionExist(nameStateA,valueTransition,valueTransition) == true) {
-                                    System.out.println("\nA transição de '"+nameStateA+"' para '"+nameStateB+"' ao ler '"+valueTransition+"' ESTÁ presente no autômato !");
+                                if (!this.a.symbolExist(valueTransition)) {
+                                    System.out.println("\nERRO ! O alfabeto do autômato não contém esse símbolo !");
                                 }
                                 else {
-                                    System.out.println("\nA transição de '"+nameStateA+"' para '"+nameStateB+"' ao ler '"+valueTransition+"' NÃO ESTÁ presente no autômato !");
+                                    if (this.a.transitionExist(nameStateA,valueTransition,valueTransition) == true) {
+                                        System.out.println("\nA transição de '"+nameStateA+"' para '"+nameStateB+"' ao ler '"+valueTransition+"' ESTÁ presente no autômato !");
+                                    }
+                                    else {
+                                        System.out.println("\nA transição de '"+nameStateA+"' para '"+nameStateB+"' ao ler '"+valueTransition+"' NÃO ESTÁ presente no autômato !");
+                                    }
                                 }
                             }
                         }
