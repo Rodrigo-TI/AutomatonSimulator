@@ -46,7 +46,11 @@ Nessa parte basta criar o autômato conforme os menus acima.
 -------------------------------------------------
 Opção escolhida : 
 ```
-Após o autômato já estar criado, esse menu irá aparecer e o usuário já poderá utilizar o autômato como quiser, conforme as opções informadas.
+Após o autômato já estar criado, esse menu irá aparecer e o usuário já poderá utilizar o autômato como quiser, conforme as opções informadas. Entretanto, é recomendado que seja seguida a seguinte ordem :
+1. Inserir os símbolos do alfabeto
+2. Adicionar os estados
+3. Adicionar as transições
+4. Utilizar o autômato como desejar
 ## **Observações :**
 - Quase todos os erros ou problemas foram tratados com o intuito de que o usuário não perdesse o autômato criado por conta de algo que levasse a finalização forçada do programa.
 - Ao utilizar a opção "1 - Verificar palavra", no menu pós-criação do autômato, caso o autômato cadastrado seja um autômato finito não-determinístico, o programa transforma ele para um autômato finito determinístico.
